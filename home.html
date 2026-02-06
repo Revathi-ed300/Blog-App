@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h3 class="text-center mb-4">All Blog Posts</h3>
+
+{% for post in posts %}
+<div class="card mb-3">
+    <div class="card-body">
+        <h4>{{ post.title }}</h4>
+        <p>{{ post.content }}</p>
+
+        <a href="/edit/{{ post.id }}" class="btn btn-warning btn-sm">Edit</a>
+        <a href="/delete/{{ post.id }}"
+           class="btn btn-danger btn-sm"
+           onclick="return confirm('Delete this post?')">Delete</a>
+    </div>
+</div>
+{% else %}
+<p class="text-center">No posts available</p>
+{% endfor %}
+{% endblock %}

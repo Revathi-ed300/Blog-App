@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Edit{% endblock %}
+
+{% block content %}
+<h3>Edit Post</h3>
+
+<form method="POST">
+    <input type="text" name="title" class="form-control mb-3"
+           value="{{ post.title }}" required>
+
+    <textarea name="content" class="form-control mb-3"
+              rows="5" required>{{ post.content }}</textarea>
+
+    <button class="btn btn-success">Update</button>
+</form>
+{% endblock %}
